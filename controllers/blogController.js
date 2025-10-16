@@ -64,10 +64,10 @@ export const getAllBlogs = async (req, res) => {
     
     console.error('Get all blogs error:', error);
     res.status(500).json({
-      success: false,
-      message: 'Failed to get blogs',
-      error
-    });
+            success: false,
+            message: 'Failed to get blogs',
+            error: error
+        });
   }
 };
 
