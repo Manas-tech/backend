@@ -273,7 +273,7 @@ export const getProfile = async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Failed to get profile',
-      error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
+      error: error
     });
   }
 };
