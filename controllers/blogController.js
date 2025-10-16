@@ -17,6 +17,7 @@ export const getAllBlogs = async (req, res) => {
     const skip = (parseInt(page) - 1) * parseInt(limit);
     
     // Build query
+    console.log("working")
     const query = {};
     if (search) {
       query.$or = [
@@ -31,6 +32,7 @@ export const getAllBlogs = async (req, res) => {
     if (featured !== '') {
       query.featured = featured === 'true';
     }
+    console.log("working2")
 
     // Build sort object
     const sort = {};
@@ -42,7 +44,7 @@ export const getAllBlogs = async (req, res) => {
       .skip(skip)
       .limit(parseInt(limit))
       .toArray();
-
+    console.log("working3",blogs)
     const total = await db.collection('blogs').countDocuments(query);
 
     res.json({
@@ -59,6 +61,7 @@ export const getAllBlogs = async (req, res) => {
     });
 
   } catch (error) {
+    
     console.error('Get all blogs error:', error);
     res.status(500).json({
       success: false,
