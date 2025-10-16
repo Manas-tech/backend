@@ -66,7 +66,7 @@ export const getAllBlogs = async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Failed to get blogs',
-      error: process.env.NODE_ENV === 'development' ? error.message : 'Internal server error'
+      error
     });
   }
 };
