@@ -37,6 +37,7 @@ app.use(helmet());
 
 // CORS configuration - allow multiple origins
 const allowedOrigins = [
+  'https://idea2mvp-ivory.vercel.app',
   'http://localhost:8080',
   'http://localhost:8081',
   'http://localhost:8082',
